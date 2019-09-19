@@ -21,6 +21,7 @@ public class Main {
 	mobile1.setPhoneNumber("+421917827658");
 	Mobile mobile2 = new Mobile("Samsung", "S10", "0917287643");
 	person1.setMobile(mobile2);
+	papdad;
 
 
 
