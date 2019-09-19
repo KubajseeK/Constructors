@@ -34,12 +34,8 @@ public class Main {
 		//person1.setAge(20);
 		System.out.println("Dominik is: " +person1.getAge());
 		Person student = new Person("Retard", 19, true, 1.78, 76, 'S');
-        System.out.println("Phone number: " + person1.getMobile().getPhoneNumber());
+        person1.print();
+        }
     }
 
 
-
-
-
-
-}

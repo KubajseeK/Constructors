@@ -110,4 +110,24 @@ public class Person {
     public char getStatus() {
         return status;
     }
+    public boolean hasMobile() {
+        if (mobile == null)
+            return false;
+        else
+            return true;
+    }
+
+    public void print() {
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.println(" Name: " + name);
+        System.out.println(" Age: ");
+        System.out.println(" Height/weight: " + height + "/" + weight);
+        System.out.println(" BMI: " +calculateBMI() + " " + getBMIStatus());
+        System.out.println(" Gender: " +isMale);
+        System.out.println(" Status " + status);
+        if(hasMobile()) {
+            System.out.println(" Mobile phone " + mobile.getPhoneNumber());
+        }
+        System.out.println("------------------------------------------------------");
+    }
 }
