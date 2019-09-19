@@ -1,0 +1,222 @@
+Index: src/sk/itsovy/learning/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/sk/itsovy/learning/Main.java	(date 1568890498387)
++++ src/sk/itsovy/learning/Main.java	(date 1568890498387)
+@@ -0,0 +1,44 @@
++package sk.itsovy.learning;
++
++public class Main {
++
++    public static void main(String[] args) {
++	Person person1;
++	person1 = new Person();
++
++	Person person2 = new Person();
++	person1.setName("Dominik");
++	person2.setName("Lucia");
++	person1.setAge(30);
++	person1.setHeight(1.76);
++	person1.setWeight(76);
++	person1.setMale(true);
++	person1.setStatus('M');
++
++	Mobile mobile1 = new Mobile();
++	mobile1.setBrand("iPhone");
++	mobile1.setModel("XS");
++	mobile1.setPhoneNumber("+421917827658");
++	Mobile mobile2 = new Mobile("Samsung", "S10", "0917287643");
++
++
++
++	//person1.setMobile(mobile1);
++	System.out.println(person1.sayHi()); //sayHi je vratná metóda (return) potrebujem ju vypísať do sout.
++		person1.sayHello(); //sayHello je prázdna metóda, nepotrebujem ju ukončiť príkazom return.
++		person2.about();
++		System.out.println(person1.calculateBMI());
++		System.out.println(person1.getBMIStatus());
++		System.out.println(person1.getYearOfBirth());
++		//person1.setAge(20);
++		System.out.println("Dominik is: " +person1.getAge());
++		Person student = new Person("Retard", 19, true, 1.78, 76, 'S');
++
++    }
++
++
++
++
++
++
++}
+Index: src/sk/itsovy/learning/Person.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/sk/itsovy/learning/Person.java	(date 1568891465789)
++++ src/sk/itsovy/learning/Person.java	(date 1568891465789)
+@@ -0,0 +1,113 @@
++package sk.itsovy.learning;
++
++public class Person {
++    private String name;
++    private int age;
++    private boolean isMale; //T = Male, F = Female
++    private double height;
++    private int weight;
++    private char status; //S = Single, M = Married, D = Divorced, W = Widowed
++    private Mobile mobile;
++
++    public Person(String name, int age, boolean isMale, double height, int weight, char status) {
++        this.name = name;
++        this.age = age;
++        this.isMale = isMale;
++        this.height = height;
++        this.weight = weight;
++        this.status = status;
++    }
++    public Person() {
++
++    }
++
++    public Mobile getMobile() {
++        return mobile;
++    }
++
++    public void setMobile(Mobile mobile) {
++        this.mobile = mobile;
++    }
++
++    public void sayHello() {
++        System.out.println("Hello!");
++    }
++    public String sayHi() {
++        return "Hi!";
++    }
++    void about() {
++        System.out.println("Hello I am neviem čo a ty si buzerant.");
++    }
++     double calculateBMI() {
++        double bmi;
++         bmi = (weight / (height * height));
++         return bmi;
++     }
++     String getBMIStatus() {
++        if (calculateBMI() < 20 && calculateBMI() >= 15) {
++            return "Underweight";
++        }
++        if (calculateBMI() >= 20 && calculateBMI() <= 25) { // referencia metódy musí byť vypisovaná osobitne f.e (if calculateBMI() ... && calculateBMI()
++            return "Optimal";
++         }
++         if (calculateBMI() > 25 && calculateBMI() <= 30) {
++             return "Overweight";
++         }
++         if (calculateBMI() > 30) {
++             return "Obese";
++         } else {
++             return null;
++         }
++     }
++
++     int getYearOfBirth() {
++        return 2019 - age;
++     }
++     public void setName(String meno) {
++        name = meno;
++     }
++
++    public void setAge(int age) {
++        this.age = age;
++    }
++
++    public void setHeight(double height) {
++        this.height = height;
++    }
++
++    public void setMale(boolean male) {
++        isMale = male;
++    }
++
++    public void setWeight(int weight) {
++        this.weight = weight;
++    }
++
++    public void setStatus(char status) {
++        this.status = status;
++    }
++
++    public String getName() {
++        return name;
++    }
++
++    public int getAge() {
++        return age;
++    }
++
++    public boolean isMale() {
++        return isMale;
++    }
++
++    public double getHeight() {
++        return height;
++    }
++
++    public int getWeight() {
++        return weight;
++    }
++
++    public char getStatus() {
++        return status;
++    }
++}
+Index: src/sk/itsovy/learning/Mobile.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/sk/itsovy/learning/Mobile.java	(date 1568888228670)
++++ src/sk/itsovy/learning/Mobile.java	(date 1568888228670)
+@@ -0,0 +1,41 @@
++package sk.itsovy.learning;
++
++public class Mobile {
++    private String brand;
++    private String model;
++    private String phoneNumber;
++
++    public Mobile() { //konstruktor musí mať rovnaký názov ako class. Toto konkrétne je bezparametrický konštruktor.
++
++    }
++
++    public Mobile(String brand, String model, String phoneNumber) {
++        this.brand = brand;
++        this.model = model;
++        this.phoneNumber = phoneNumber;
++    }
++
++    public String getBrand() {
++        return brand;
++    }
++
++    public void setBrand(String brand) {
++        this.brand = brand;
++    }
++
++    public String getModel() {
++        return model;
++    }
++
++    public void setModel(String model) {
++        this.model = model;
++    }
++
++    public String getPhoneNumber() {
++        return phoneNumber;
++    }
++
++    public void setPhoneNumber(String phoneNumber) {
++        this.phoneNumber = phoneNumber;
++    }
++}
