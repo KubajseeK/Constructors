@@ -9,6 +9,7 @@ public class Person {
     private char status; //S = Single, M = Married, D = Divorced, W = Widowed
     private Mobile mobile;
     private Car car;
+    private Calculator calculator;
 
 
     public Person(String name, int age, boolean isMale, double height, int weight, char status) {
@@ -21,6 +22,14 @@ public class Person {
     }
     public Person() {
 
+    }
+
+    public Calculator getCalculator() {
+        return calculator;
+    }
+
+    public void setCalculator(Calculator calculator) {
+        this.calculator = calculator;
     }
 
     public Car getCar() {
@@ -126,6 +135,12 @@ public class Person {
         else
             return true;
     }
+    public boolean hasCar() {
+        if (car == null)
+            return false;
+        else
+            return true;
+    }
 
     public void print() {
         System.out.println("---------------------------------------------------------------------------");
@@ -137,7 +152,9 @@ public class Person {
         System.out.println(" Status " + status);
         if(hasMobile()) {
             System.out.println(" Mobile phone " + mobile.getPhoneNumber());
-            System.out.println(" Car: " + car.getModel() + " " + car.getBrand() + " " + car.getYearOfCreation());
+        }
+        if (hasCar()) {
+            System.out.println(" Car: " + car.getModel() + " " + car.getBrand() + " " + car.getYearOfCreation() + " Which has " + car.calculateHorsePowers() + " Horsepowers");
         }
         System.out.println("------------------------------------------------------");
     }

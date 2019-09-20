@@ -3,16 +3,18 @@ package sk.itsovy.learning;
 public class Car {
     private String model;
     private String brand;
-    private String yearOfCreation;
+    private int yearOfCreation;
+    private int power;
 
 
     public Car() {
     }
 
-    public Car(String model, String brand, String yearOfCreation) {
+    public Car(String model, String brand, int yearOfCreation, int power) {
         this.model = model;
         this.brand = brand;
         this.yearOfCreation = yearOfCreation;
+        this.power = power;
 
 
     }
@@ -33,16 +35,19 @@ public class Car {
         this.brand = brand;
     }
 
-    public String getYearOfCreation() {
+    public int getYearOfCreation() {
         return yearOfCreation;
     }
 
-    public void setYearOfCreation(String yearOfCreation) {
+    public void setYearOfCreation(int yearOfCreation) {
         this.yearOfCreation = yearOfCreation;
+
+
     }
 
-    public void printCar() {
-
+    public double calculateHorsePowers() {
+        double horse_power = 1.34102209;
+        return power * horse_power;
     }
 
 

@@ -22,8 +22,13 @@ public class Main {
 	Mobile mobile2 = new Mobile("Samsung", "S10", "0917287643");
 	person1.setMobile(mobile2);
 
-	Car car1 = new Car("Audi", "S7", "2017");
+	Car car1 = new Car("Audi", "S7", 2017, 176);
 	person1.setCar(car1);
+
+	Calculator calc1 = new Calculator(true, "Cassio BebeDobreRano1");
+	person1.setCalculator(calc1);
+
+
 
 
 
@@ -38,6 +43,7 @@ public class Main {
 		System.out.println("Dominik is: " +person1.getAge());
 		Person student = new Person("Retard", 19, true, 1.78, 76, 'S');
         person1.print();
+		System.out.println(calc1.add(50, 50));
         }
 
     }
