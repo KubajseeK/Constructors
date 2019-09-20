@@ -8,6 +8,8 @@ public class Person {
     private int weight;
     private char status; //S = Single, M = Married, D = Divorced, W = Widowed
     private Mobile mobile;
+    private Car car;
+
 
     public Person(String name, int age, boolean isMale, double height, int weight, char status) {
         this.name = name;
@@ -19,6 +21,14 @@ public class Person {
     }
     public Person() {
 
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public Mobile getMobile() {
@@ -120,13 +130,14 @@ public class Person {
     public void print() {
         System.out.println("---------------------------------------------------------------------------");
         System.out.println(" Name: " + name);
-        System.out.println(" Age: ");
+        System.out.println(" Age: " + age);
         System.out.println(" Height/weight: " + height + "/" + weight);
         System.out.println(" BMI: " +calculateBMI() + " " + getBMIStatus());
         System.out.println(" Gender: " +isMale);
         System.out.println(" Status " + status);
         if(hasMobile()) {
             System.out.println(" Mobile phone " + mobile.getPhoneNumber());
+            System.out.println(" Car: " + car.getModel() + " " + car.getBrand() + " " + car.getYearOfCreation());
         }
         System.out.println("------------------------------------------------------");
     }
