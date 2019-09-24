@@ -1,5 +1,7 @@
 package sk.itsovy.learning;
 
+import sk.itsovy.kubik.other.Goulash;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -44,9 +46,15 @@ public class Main {
 		Person student = new Person("Retard", 19, true, 1.78, 76, 'S');
         person1.print();
 			if (person1.hasCalculator()) {
+				calc1.turnOn();
 				System.out.println(person1.getCalculator().add(50, 50));
+				System.out.println(person1.getCalculator().convertDecimalToHexadecimal(4000));
 			}
+			Goulash obj = new Goulash();
+			obj.sayNHello(12);
+			obj.sayHi();
+			obj.sayNHi(9);
 		}
-}
+		}
 
 
