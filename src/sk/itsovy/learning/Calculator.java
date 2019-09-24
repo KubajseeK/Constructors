@@ -32,10 +32,10 @@ public class Calculator {
         power = false;
     }
 
-    public int calculateSquareArea (int a) {
+    public int calculateSquareArea(int a) {
         if (isPower()) {
             return (a * a);
-        }else {
+        } else {
             return 0;
         }
     }
@@ -43,7 +43,7 @@ public class Calculator {
     public double centimeterToInch(double a) {
         if (isPower()) {
             return (a * 0.393);
-        }else {
+        } else {
             return 0;
         }
     }
@@ -51,14 +51,15 @@ public class Calculator {
     public double inchToCentimeter(double a) {
         if (isPower()) {
             return (a * 2.54);
-        }else {
+        } else {
             return 0;
         }
     }
+
     public void togglePower() {
         if (isPower()) {
             turnOff();
-        }else {
+        } else {
             turnOn();
 
             //power = !power;
@@ -68,8 +69,26 @@ public class Calculator {
     public String convertDecimalToHexadecimal(int a) {
         if (isPower()) {
             return Integer.toHexString(a);
-        }else {
+        } else {
             return null;
+        }
+    }
+
+    public double calculateRectangleDiagonal(int a, int b) {
+        if (isPower()) {
+            return Math.sqrt((a * a) + (b * b));
+        } else {
+            return 0;
+        }
+
+    }
+
+    public double calculateCircleArea(double area) {
+        if (isPower()) {
+            double circleArea = area * area * Math.PI;
+            return circleArea;
+        }else {
+            return 0;
         }
     }
 

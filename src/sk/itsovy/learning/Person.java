@@ -20,6 +20,7 @@ public class Person {
         this.weight = weight;
         this.status = status;
     }
+
     public Person() {
 
     }
@@ -31,6 +32,7 @@ public class Person {
     public void setCalculator(Calculator calculator) {
         this.calculator = calculator;
     }
+
     public boolean hasCalculator() {
         return calculator != null;
     }
@@ -54,40 +56,45 @@ public class Person {
     public void sayHello() {
         System.out.println("Hello!");
     }
+
     public String sayHi() {
         return "Hi!";
     }
+
     void about() {
         System.out.println("Hello I am neviem čo a ty si buzerant.");
     }
-     double calculateBMI() {
+
+    double calculateBMI() {
         double bmi;
-         bmi = (weight / (height * height));
-         return bmi;
-     }
-     String getBMIStatus() {
+        bmi = (weight / (height * height));
+        return bmi;
+    }
+
+    String getBMIStatus() {
         if (calculateBMI() < 20 && calculateBMI() >= 15) {
             return "Underweight";
         }
         if (calculateBMI() >= 20 && calculateBMI() <= 25) { // referencia metódy musí byť vypisovaná osobitne f.e (if calculateBMI() ... && calculateBMI()
             return "Optimal";
-         }
-         if (calculateBMI() > 25 && calculateBMI() <= 30) {
-             return "Overweight";
-         }
-         if (calculateBMI() > 30) {
-             return "Obese";
-         } else {
-             return null;
-         }
-     }
+        }
+        if (calculateBMI() > 25 && calculateBMI() <= 30) {
+            return "Overweight";
+        }
+        if (calculateBMI() > 30) {
+            return "Obese";
+        } else {
+            return null;
+        }
+    }
 
-     int getYearOfBirth() {
+    int getYearOfBirth() {
         return 2019 - age;
-     }
-     public void setName(String meno) {
+    }
+
+    public void setName(String meno) {
         name = meno;
-     }
+    }
 
     public void setAge(int age) {
         this.age = age;
@@ -132,12 +139,14 @@ public class Person {
     public char getStatus() {
         return status;
     }
+
     public boolean hasMobile() {
         if (mobile == null)
             return false;
         else
             return true;
     }
+
     public boolean hasCar() {
         if (car == null)
             return false;
@@ -150,10 +159,10 @@ public class Person {
         System.out.println(" Name: " + name);
         System.out.println(" Age: " + age);
         System.out.println(" Height/weight: " + height + "/" + weight);
-        System.out.println(" BMI: " +calculateBMI() + " " + getBMIStatus());
-        System.out.println(" Gender: " +isMale);
+        System.out.println(" BMI: " + calculateBMI() + " " + getBMIStatus());
+        System.out.println(" Gender: " + isMale);
         System.out.println(" Status " + status);
-        if(hasMobile()) {
+        if (hasMobile()) {
             System.out.println(" Mobile phone " + mobile.getPhoneNumber());
         }
         if (hasCar()) {
