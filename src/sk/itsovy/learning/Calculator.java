@@ -5,14 +5,13 @@ public class Calculator {
     private boolean power;
     private String name;
 
-    public Calculator(boolean power, String name) {
-        this.power = power;
+    public Calculator(String name) {
         this.name = name;
+        power = false;
     }
 
     public int add(int a, int b) {
-        int adding = (a + b);
-        return adding;
+       return a + b;
     }
 
 
@@ -24,7 +23,5 @@ public class Calculator {
         this.power = power;
     }
 
-    public String getName() {
-        return name;
-    }
+
 }

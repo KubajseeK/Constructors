@@ -31,6 +31,9 @@ public class Person {
     public void setCalculator(Calculator calculator) {
         this.calculator = calculator;
     }
+    public boolean hasCalculator() {
+        return calculator != null;
+    }
 
     public Car getCar() {
         return car;
