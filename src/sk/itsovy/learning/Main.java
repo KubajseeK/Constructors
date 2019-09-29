@@ -55,6 +55,12 @@ public class Main {
         obj.sayNHi(9);
 		System.out.println("------------------------------------------------");
 		System.out.println(person1.getCalculator().calculateCircleArea(5));
+		System.out.println(obj.getEvenNumber(11));
+		System.out.println(person1.getCalculator().getAverageNumber(13, 4, 89));
+		System.out.println(obj.getPozicka(12, 0.05, 9000));
+		System.out.println("-----------------------------------------------------------------");
+		//obj.test();
+		obj.addingNumbers();
     }
 }
 

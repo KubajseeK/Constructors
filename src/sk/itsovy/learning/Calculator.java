@@ -87,10 +87,17 @@ public class Calculator {
         if (isPower()) {
             double circleArea = area * area * Math.PI;
             return circleArea;
-        }else {
+        } else {
             return 0;
         }
     }
 
+    public double getAverageNumber(int a, int b, int c) {
+        if (isPower()) {
+            return (double) (a + b + c) / 3;
+        } else {
+            return 0;
+        }
+    }
 
 }
