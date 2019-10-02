@@ -61,6 +61,11 @@ public class Main {
 		System.out.println("-----------------------------------------------------------------");
 		//obj.test();
 		obj.addingNumbers();
+		obj.primeNumberChecker(12);
+        System.out.println("----------------------------------------------------------------------------");
+        //obj.biggestDelitel();
+        obj.uloha8(6);
+
     }
 }
 
